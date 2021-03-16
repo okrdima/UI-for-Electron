@@ -1,24 +1,29 @@
 import Button from '@material-ui/core/Button'
+import TimePicker from "./TimePicker";
 const { Form, FormGenerator, FormButtons} = require('mui-form-generator-fractal-band-2')
 
 const config = [
   {
-    type: 'number',
-    label: 'Height',
-    name: 'height',
-    placeholder: 'Enter height',
-    rules: {
-      required: 'Enter height',
-    }
-  },
-  {
-    type: 'number',
-    label: 'Width',
-    name: 'width',
-    placeholder: 'Enter width',
-    rules: {
-      required: 'Enter widths',
-    }
+    inlineLayout: [
+      {
+        type: 'number',
+        label: 'Height',
+        name: 'height',
+        placeholder: 'Enter height',
+        rules: {
+          required: 'Enter height',
+        }
+      },
+      {
+        type: 'number',
+        label: 'Width',
+        name: 'width',
+        placeholder: 'Enter width',
+        rules: {
+          required: 'Enter widths',
+        }
+      }
+    ]
   }
 ]
 interface SizeFormProps  {

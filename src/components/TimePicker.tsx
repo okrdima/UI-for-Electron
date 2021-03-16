@@ -9,15 +9,18 @@ interface TimePickerProps  {
   value: any,
   onChange:any,
 }
-const TimePicker = (props:TimePickerProps) => {
+const TimePickerDt = (props:TimePickerProps) => {
   const { value, onChange } = props
   return (
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
       <KeyboardTimePicker
         margin="normal"
         label="Time picker"
-        value={value}
+        value={value||null}
         onChange={onChange}
+        minutesStep={30}
+        placeholder="__:__ _M"
+        // defaultValue="2017-05-24T10:30"
         KeyboardButtonProps={{
           'aria-label': 'change time',
         }}
@@ -25,4 +28,4 @@ const TimePicker = (props:TimePickerProps) => {
     </MuiPickersUtilsProvider>
   )
 }
-export default TimePicker
+export default TimePickerDt

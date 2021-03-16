@@ -11,19 +11,16 @@ const config = [
         name: 'pointName',
         placeholder: 'Enter point name',
         rules: {
-          required: 'Enter point name',
-          pattern: {
-            value: 'word'
-          }
+          required: 'Enter point name'
         }
       },
       {
         type: 'number',
         label: 'Value',
         name: 'value',
-        placeholder: 'Enter width',
+        placeholder: 'Enter Value',
         rules: {
-          required: 'Enter widths',
+          required: 'Enter Value',
         }
       }
     ]

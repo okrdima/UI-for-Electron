@@ -15,9 +15,9 @@ const Layout = ()=>{
           <Row>
             <Col>
               <Row>
-                <Col cw={8}>
+                <Col cw={7}>
                 </Col>
-                <Col cw={4}>
+                <Col cw={5}>
                   <Row v={"center"} h={"center"} noInnerGutters>
                     <Col>
                       <Row  h="center">

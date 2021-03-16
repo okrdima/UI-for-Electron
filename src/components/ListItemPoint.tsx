@@ -27,7 +27,7 @@ const ListItemPoint = (props:ListItemProps)=>{
                 {pointNameLabel}</Typography>
             </Col>
             <Col cw={'auto'}>
-              <IconButton aria-label="delete" color="secondary" onClick={() => dispatch({ type: 'DELETE_POINT', payload: id })}>
+              <IconButton  style={{padding:'0px'}} aria-label="delete" color="secondary" onClick={() => dispatch({ type: 'DELETE_POINT', payload: id })}>
                 <DeleteIcon />
               </IconButton>
             </Col>

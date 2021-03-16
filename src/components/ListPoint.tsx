@@ -11,6 +11,12 @@ const ListPoint = ()=>{
   useEffect(()=>
   {setPoints(store)
   },[store])
+  points?.points?.map((item:any, index:number)=>{
+    console.log(item.value)
+    console.log(parseFloat(item.value))
+    console.log(typeof parseFloat(item.value))
+    console.log(parseFloat(item.value)+index)
+  })
   return (
     <Container mt={3}>
       <Row  h="center" noGutters>
@@ -36,7 +42,7 @@ const ListPoint = ()=>{
       <Row noGutters mt={2} v={'center'} h={'center'}>
         <Col cw={'auto'}>
         <Combined title="Add points">
-          <Button variant="contained" type='submit' color="primary">Add Point</Button>
+          <Button variant="contained" type='submit' color="primary" >Add Point</Button>
         </Combined>
         </Col>
       </Row>
