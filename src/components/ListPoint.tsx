@@ -3,6 +3,9 @@ import {useStoreContext} from "../context";
 import {Combined, ListItemPoint} from "./index";
 import {useEffect, useState} from "react";
 import {Button, Typography} from "@material-ui/core";
+import SoundIntensity from "../functions/SoundIntensity";
+import SoundIntensityLevel from "../functions/SoundIntensityLevel";
+import SoundPressureLevel from "../functions/SoundPressureLevel";
 
 
 const ListPoint = ()=>{
@@ -12,10 +15,12 @@ const ListPoint = ()=>{
   {setPoints(store)
   },[store])
   points?.points?.map((item:any, index:number)=>{
-    console.log(item.value)
-    console.log(parseFloat(item.value))
-    console.log(typeof parseFloat(item.value))
-    console.log(parseFloat(item.value)+index)
+    let I:number = SoundIntensity(item.value)
+    let L0:number = SoundIntensityLevel(I)
+    let L:number = SoundPressureLevel(item.value)
+    console.log(I.toFixed(5 ))
+    console.log(L0.toFixed(1))
+    console.log(L.toFixed(2))
   })
   return (
     <Container mt={3}>

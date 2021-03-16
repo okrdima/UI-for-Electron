@@ -1,5 +1,5 @@
-import {Container,Col,Row,Box} from '@qonsoll/react-design'
-import {ListItem, ListItemText, IconButton, Paper, Typography} from '@material-ui/core'
+import {Col,Row } from '@qonsoll/react-design'
+import { ListItemText, IconButton, Paper, Typography} from '@material-ui/core'
 import DeleteIcon from '@material-ui/icons/Delete';
 import {useStoreContext} from "../context";
 interface ListItemProps  {
@@ -13,7 +13,6 @@ const ListItemPoint = (props:ListItemProps)=>{
   const {pointName, start, end, value,id}  = props
   const pointNameLabel:string = `Name: ${pointName}`
   const rangeDate:string = `From: ${start} To: ${end}`
-  // const toLabel:string = `To:`
   const valueLabel:string = `Value: ${value}`
   const { dispatch } = useStoreContext()
 
