@@ -1,7 +1,7 @@
 const SoundIntensity = (pointValue:string):number=>{
-  let value:number = parseFloat(pointValue)
-  let pC:number = 410
-  let result:number = Math.pow(value, 2) / pC
+  const value:number = parseFloat(pointValue)
+  const pC:number = 410
+  const result:number = Math.pow(value, 2) / pC
   return result
 }
 export default SoundIntensity

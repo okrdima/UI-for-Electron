@@ -14,6 +14,7 @@ const ListPoint = ()=>{
   useEffect(()=>
   {setPoints(store)
   },[store])
+  //todo ist only test after than need add button which show result data
   points?.points?.map((item:any, index:number)=>{
     let I:number = SoundIntensity(item.value)
     let L0:number = SoundIntensityLevel(I)
