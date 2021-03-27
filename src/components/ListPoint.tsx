@@ -1,12 +1,8 @@
 import { Container, Col,  Row,  Box} from '@qonsoll/react-design'
 import {useStoreContext} from "../context";
-import {Combined, ListItemPoint} from "./index";
+import {CombinedAddPoint, ListItemPoint,CombinedShowResult} from "./index";
 import {useEffect, useState} from "react";
 import {Button, Typography} from "@material-ui/core";
-import SoundIntensity from "../functions/SoundIntensity";
-import SoundIntensityLevel from "../functions/SoundIntensityLevel";
-import SoundPressureLevel from "../functions/SoundPressureLevel";
-
 
 const ListPoint = ()=>{
   const { store } = useStoreContext()
@@ -14,15 +10,7 @@ const ListPoint = ()=>{
   useEffect(()=>
   {setPoints(store)
   },[store])
-  //todo ist only test after than need add button which show result data
-  points?.points?.map((item:any, index:number)=>{
-    let I:number = SoundIntensity(item.value)
-    let L0:number = SoundIntensityLevel(I)
-    let L:number = SoundPressureLevel(item.value)
-    console.log(I.toFixed(5 ))
-    console.log(L0.toFixed(1))
-    console.log(L.toFixed(2))
-  })
+
   return (
     <Container mt={3}>
       <Row  h="center" noGutters>
@@ -45,14 +33,20 @@ const ListPoint = ()=>{
         }
         </Col>
       </Row>
-      <Row noGutters mt={2} v={'center'} h={'center'}>
-        <Col cw={'auto'}>
-        <Combined title="Add points">
+      <Row noGutters mt={2} v={'center'} h={'between'}>
+        <Col cw='auto'>
+        <CombinedAddPoint title="Add points">
           <Button variant="contained" type='submit' color="primary" >Add Point</Button>
-        </Combined>
+        </CombinedAddPoint>
+        </Col>
+        <Col cw='auto'>
+          <CombinedShowResult title="Result">
+            <Button variant="contained" color="primary" >Show result</Button>
+          </CombinedShowResult>
         </Col>
       </Row>
     </Container>
   )
 }
 export default ListPoint
+

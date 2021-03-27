@@ -1,6 +1,6 @@
 import {Container,Col,Row,Box} from '@qonsoll/react-design'
-import {SizeForm,Combined,ListItemPoint,ListPoint} from './index'
-import {Button, Typography} from "@material-ui/core";
+import {SizeForm, ListPoint} from './index'
+import {Typography} from "@material-ui/core";
 const {useForm } = require('mui-form-generator-fractal-band-2')
 
 const Layout = ()=>{

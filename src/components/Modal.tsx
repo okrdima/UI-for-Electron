@@ -12,8 +12,12 @@ interface ModalProps  {
   dialogProps:any,
   title:string,
   children: any,
-  buttonSubmitProps:any,
+  buttonSubmitProps?:any,
   buttonCancelProps:any,
+  buttonSubmitText?:string,
+  buttonCancelText?:string,
+  withoutButtonSubmit?:boolean,
+  withoutButtonCancel?:boolean
 }
 
 const Modal = (props:ModalProps) => {
@@ -23,7 +27,11 @@ const Modal = (props:ModalProps) => {
     title,
     children,
     buttonSubmitProps,
-    buttonCancelProps
+    buttonCancelProps,
+    buttonSubmitText,
+    buttonCancelText,
+    withoutButtonCancel,
+    withoutButtonSubmit
   } = props
   return (
     <Dialog open={open} onClose={buttonCancelProps.onClick} {...dialogProps}>
@@ -34,8 +42,12 @@ const Modal = (props:ModalProps) => {
       </DialogTitle>
       <DialogContent>{children}</DialogContent>
       <DialogActions>
-            <Button {...buttonCancelProps}>Cancel</Button>
-            <Button {...buttonSubmitProps}>Add Point</Button>
+        {
+          !withoutButtonCancel && <Button {...buttonCancelProps}> {buttonCancelText ? buttonCancelText : 'Cancel'}</Button>
+        }
+        {
+          !withoutButtonSubmit && <Button {...buttonSubmitProps}>{buttonSubmitText ? buttonSubmitText : 'Submit'}</Button>
+        }
       </DialogActions>
     </Dialog>
   )
