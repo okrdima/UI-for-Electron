@@ -22,7 +22,7 @@ const ResultView = () => {
     arrayI.push(I)
     let L0: number = SoundIntensityLevel(I)
     arrayL0.push(L0)
-    // second param width from Graf D3
+    // second param width from Graph D3
     let L: number = SoundPressureLevel(item.value,30)
     arrayL.push(L)
   })
