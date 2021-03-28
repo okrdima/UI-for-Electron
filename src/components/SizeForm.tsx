@@ -1,6 +1,10 @@
 import Button from '@material-ui/core/Button'
-import TimePicker from "./TimePicker";
-const { Form, FormGenerator, FormButtons} = require('mui-form-generator-fractal-band-2')
+import React from 'react'
+const {
+  Form,
+  FormGenerator,
+  FormButtons
+} = require('mui-form-generator-fractal-band-2')
 
 const config = [
   {
@@ -11,7 +15,7 @@ const config = [
         name: 'height',
         placeholder: 'Enter height',
         rules: {
-          required: 'Enter height',
+          required: 'Enter height'
         }
       },
       {
@@ -20,26 +24,24 @@ const config = [
         name: 'width',
         placeholder: 'Enter width',
         rules: {
-          required: 'Enter widths',
+          required: 'Enter widths'
         }
       }
     ]
   }
 ]
-interface SizeFormProps  {
-  onSubmit: any,
-  form:any,
-  buttonProps?:object,
-  show:Array<string>
+interface SizeFormProps {
+  onSubmit: any
+  form: any
+  buttonProps?: any
+  show: Array<string>
 }
-const SizeForm = (props:SizeFormProps) => {
-  const {show,buttonProps,onSubmit,form}=props
+const SizeForm = (props: SizeFormProps) => {
+  const { show, buttonProps, onSubmit, form } = props
   return (
-    <Form
-      form={form}
-      onSubmit={onSubmit}>
+    <Form form={form} onSubmit={onSubmit}>
       <FormGenerator config={config} show={show} />
-      <FormButtons Button={Button} {...buttonProps}/>
+      <FormButtons Button={Button} {...buttonProps} />
     </Form>
   )
 }

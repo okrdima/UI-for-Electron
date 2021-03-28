@@ -1,14 +1,14 @@
-import React,{ useState } from 'react'
+import React, { useState } from 'react'
 import { Button } from '@material-ui/core'
 import { Modal, ResultView } from './index'
 
-interface CombinedProps  {
-  title:string,
+interface CombinedProps {
+  title: string
   children?: JSX.Element
 }
-const CombinedShowResult= (props:CombinedProps) => {
-// [INTERFACES]
-  const {title, children} = props
+const CombinedShowResult = (props: CombinedProps) => {
+  // [INTERFACES]
+  const { title, children } = props
   // [COMPONENT_STATE_HOOKS]
   const [open, setOpen] = useState(false)
 
@@ -21,8 +21,8 @@ const CombinedShowResult= (props:CombinedProps) => {
   return (
     <>
       {(children &&
-        React.cloneElement(children, {onClick: handleClickOpen})) || (
-        <Button onClick={handleClickOpen}/>
+        React.cloneElement(children, { onClick: handleClickOpen })) || (
+        <Button onClick={handleClickOpen} />
       )}
 
       <Modal
@@ -40,10 +40,7 @@ const CombinedShowResult= (props:CombinedProps) => {
         }}
         withoutButtonSubmit={true}
         buttonCancelText={'Closed'}>
-
-        {
-        <ResultView />
-        }
+        {<ResultView />}
       </Modal>
     </>
   )

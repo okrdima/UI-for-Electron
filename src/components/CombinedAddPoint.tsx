@@ -1,18 +1,17 @@
-import React,{ useState } from 'react'
+import React, { useState } from 'react'
 import { Button } from '@material-ui/core'
 import { Modal, TimePointForm } from './index'
 import { useStoreContext } from '../context'
-const {useForm} = require( 'mui-form-generator-fractal-band-2')
+const { useForm } = require('mui-form-generator-fractal-band-2')
 
-interface CombinedProps  {
-  title:string,
+interface CombinedProps {
+  title: string
   children?: JSX.Element
 }
 
-const CombinedAddPoint= (props:CombinedProps) => {
-// [INTERFACES]
-  const {title, children} = props
-
+const CombinedAddPoint = (props: CombinedProps) => {
+  // [INTERFACES]
+  const { title, children } = props
 
   // [COMPONENT_STATE_HOOKS]
   const [open, setOpen] = useState(false)
@@ -22,7 +21,7 @@ const CombinedAddPoint= (props:CombinedProps) => {
   const { dispatch } = useStoreContext()
 
   // [HELPER_FUNCTIONS]
-  const onAddPoint: any = (data: object) => {
+  const onAddPoint: any = (data: any) => {
     dispatch({ type: 'ADD_POINT', payload: data })
     setOpen(false)
     form.reset({})
@@ -37,8 +36,8 @@ const CombinedAddPoint= (props:CombinedProps) => {
   return (
     <>
       {(children &&
-        React.cloneElement(children, {onClick: handleClickOpen})) || (
-        <Button onClick={handleClickOpen}/>
+        React.cloneElement(children, { onClick: handleClickOpen })) || (
+        <Button onClick={handleClickOpen} />
       )}
 
       <Modal
@@ -52,7 +51,7 @@ const CombinedAddPoint= (props:CombinedProps) => {
           text: 'Submit',
           variant: 'contained',
           color: 'primary',
-          onClick: submitForm,
+          onClick: submitForm
         }}
         buttonCancelProps={{
           text: 'Cancel',
@@ -60,9 +59,13 @@ const CombinedAddPoint= (props:CombinedProps) => {
           onClick: handleClose
         }}
         buttonSubmitText={'Add point'}>
-
         {
-          <TimePointForm show={['pointName', 'value','start','end']} onSubmit={onAddPoint} form={form} buttonProps={{visible: false}}/>
+          <TimePointForm
+            show={['pointName', 'value', 'start', 'end']}
+            onSubmit={onAddPoint}
+            form={form}
+            buttonProps={{ visible: false }}
+          />
         }
       </Modal>
     </>

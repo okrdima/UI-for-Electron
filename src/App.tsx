@@ -1,18 +1,18 @@
-import {Layout} from "./components";
+import { Layout } from './components'
 import { ThemeProvider } from '@qonsoll/react-design'
 import Theme from '../src/config/theme'
 import './config/root.scss'
 import Provider from '../src/context/Provider'
-import React from "react";
+import React from 'react'
 
 const App = () => {
   return (
-      <ThemeProvider theme={Theme}>
-        <Provider store={{ points: [] }}>
-          <Layout/>
-        </Provider>
-      </ThemeProvider>
+    <ThemeProvider theme={Theme}>
+      <Provider store={{ points: [] }}>
+        <Layout />
+      </Provider>
+    </ThemeProvider>
   )
 }
 
-export default App;
+export default App

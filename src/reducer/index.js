@@ -14,7 +14,7 @@ const rootReducer = (state, action) => {
             pointName: action.payload.pointName,
             start: moment(action.payload.start).format('HH:mm'),
             end: moment(action.payload.end).format('HH:mm'),
-            value: action.payload.value,
+            value: action.payload.value
           }
         ]
       }
